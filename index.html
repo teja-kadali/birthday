@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy Birthday 🎉</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- HOME -->
+  <section class="home" id="home">
+    <div class="balloons" id="balloons"></div>
+
+    <div class="home-content">
+      <h1>Happy Birthday 🎂</h1>
+      <h2>[Her Name]</h2>
+
+      <!-- BIG PIG BUTTON -->
+      <div class="pig-btn" onclick="showCards()">🐷</div>
+      <p class="hint">Tap the pig</p>
+    </div>
+  </section>
+
+  <!-- CARDS -->
+  <section class="cards-page hidden" id="cards">
+    <h3 class="cards-title">Choose one 💖</h3>
+
+    <div class="cards">
+      <div class="card" onclick="openCard()"></div>
+      <div class="card" onclick="openCard()"></div>
+      <div class="card" onclick="openCard()"></div>
+    </div>
+  </section>
+
+  <!-- VIEWER -->
+  <section class="viewer hidden" id="viewer">
+    <button class="close" onclick="closeViewer()">🐷</button>
+
+    <div class="image-frame">
+      <img id="viewerImg">
+    </div>
+
+    <p class="message" id="viewerText">
+      <!-- Message goes here -->
+    </p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

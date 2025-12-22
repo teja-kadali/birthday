@@ -1,0 +1,333 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", system-ui, sans-serif;
+}
+
+body {
+  overflow: hidden;
+  color: white;
+}
+
+/* 🌈 HOME */
+.home {
+  height: 100vh;
+  position: relative;
+  background: linear-gradient(135deg,
+      #ff9a9e,
+      #fad0c4,
+      #fbc2eb,
+      #a18cd1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-content {
+  text-align: center;
+  z-index: 2;
+}
+
+.home h1 {
+  font-size: 2.8rem;
+  color: #ffffff;
+  text-shadow:
+    0 0 12px rgba(255, 255, 255, 0.8),
+    0 0 30px rgba(255, 110, 199, 0.9);
+}
+
+.home h2 {
+  font-size: 1.9rem;
+  color: #2b0f4a;
+  font-weight: 600;
+  margin: 18px 0 30px;
+}
+
+
+/* 🐷 PIG BUTTON */
+.pig-btn {
+  font-size: 5rem;
+  cursor: pointer;
+  animation: bounce 1.4s infinite;
+  filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.9));
+}
+
+.pig-btn:active {
+  transform: scale(0.9);
+}
+
+.hint {
+  margin-top: 8px;
+  opacity: 0.8;
+}
+
+/* 🎈 HEART BALLOONS */
+/* 🎈 HEART BALLOONS WITH STATIC CENTERED THREADS */
+.balloons {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* single balloon */
+.balloon {
+  position: absolute;
+  width: 60px;
+  animation: floatUp linear forwards;
+}
+
+/* glowing heart */
+.balloon svg {
+  width: 100%;
+  display: block;
+  opacity: 0.8;
+  filter:
+    drop-shadow(0 0 6px rgba(255, 255, 255, 0.35)) drop-shadow(0 0 16px rgba(255, 255, 255, 0.25));
+}
+
+/* string (no glow) */
+.balloon .string {
+  width: 2px;
+  height: 120px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 1px;
+}
+
+/* vertical float */
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+
+  to {
+    transform: translateY(-110vh);
+    opacity: 0.3;
+  }
+}
+
+
+/* 🎗️ STRING */
+.balloon .string {
+  width: 2px;
+  height: 120px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: none;
+  /* no glow */
+  border-radius: 1px;
+}
+
+/* ☁️ Float animation */
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+
+  to {
+    transform: translateY(-140vh);
+    opacity: 0.25;
+  }
+}
+
+/* 🎴 CARDS */
+.card {
+  width: 90px;
+  height: 140px;
+  border-radius: 16px;
+
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.25),
+      rgba(255, 255, 255, 0.05));
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:active {
+  transform: scale(0.92);
+}
+
+.cards-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* 🌈 matching gradient */
+  background: linear-gradient(135deg,
+      #ff9a9e,
+      #fad0c4,
+      #fbc2eb,
+      #a18cd1);
+
+  color: #fff;
+}
+
+.cards-title {
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+  text-shadow:
+    0 0 12px rgba(255, 255, 255, 0.6);
+}
+
+.cards {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.card {
+  position: relative;
+
+  width: 100px;
+  height: 160px;
+  border-radius: 22px;
+
+  /* 🧊 glass effect */
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.35),
+    rgba(255,255,255,0.10)
+  );
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  /* ✨ depth + shine */
+  box-shadow:
+    0 25px 45px rgba(0,0,0,0.35),
+    inset 0 0 0 1px rgba(255,255,255,0.35);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.card:active {
+  transform: scale(0.94);
+  box-shadow:
+    0 15px 30px rgba(0,0,0,0.25),
+    inset 0 0 0 1px rgba(255,255,255,0.5);
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+
+  background: radial-gradient(
+    circle at top left,
+    rgba(255,255,255,0.25),
+    transparent 60%
+  );
+}
+
+
+/* 🖼️ VIEWER */
+.viewer {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* 👈 TRUE CENTER */
+  padding: 80px 0 40px;
+  /* space for close + scroll */
+  overflow-y: auto;
+}
+
+/* Image frame */
+.image-frame {
+  width: 86vw;
+  max-width: 340px;
+  height: 70vh;
+  /* fixed mobile-friendly height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+  animation: zoomCard .45s ease;
+}
+
+/* ✅ HEIGHT-BASED FIT (BEST FOR PORTRAIT IMAGES) */
+.image-frame img {
+  height: 100%;
+  /* 👈 key line */
+  width: auto;
+  /* auto width */
+  max-width: 100%;
+  object-fit: contain;
+  /* safety */
+}
+
+/* ✨ MESSAGE */
+.message {
+  margin-top: 18px;
+  padding: 0 20px;
+  font-size: 1.1rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 12px rgba(255, 180, 255, 0.8);
+}
+
+/* 🐷 CLOSE */
+.close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 1.8rem;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 50%;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+@keyframes zoomCard {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* UTIL */
+.hidden {
+  display: none;
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
